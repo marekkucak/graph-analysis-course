@@ -6,9 +6,6 @@ services:
     container_name: pe-graph-neo4j
     environment:
       NEO4J_AUTH: neo4j/your_password_here
-      NEO4J_PLUGINS: '["graph-data-science"]'
-      NEO4J_dbms_memory_heap_maxSize: 2G
-      NEO4J_dbms_memory_pagecache_size: 1G
     ports:
       - "7474:7474"  # Browser
       - "7687:7687"  # Bolt
