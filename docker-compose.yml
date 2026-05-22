@@ -1,11 +1,35 @@
 version: "3.9"
 
+# ============================================================================
+# IMPORTANT: Neo4j with Graph Data Science Plugin
+# ============================================================================
+# This configuration includes the Graph Data Science (GDS) plugin, required for:
+#   - Lesson 11: Neo4j Graph Data Science Workflow
+#   - Lesson 12+: Advanced graph analytics
+#
+# GDS Plugin: Provides 60+ enterprise-scale graph algorithms
+#   - PageRank, Louvain community detection, centrality measures
+#   - 10-100x faster than NetworkX on large graphs
+#   - Production-ready for enterprise deployments
+#
+# Setup Instructions:
+# 1. First-time setup: docker compose up -d (takes 2-3 minutes for plugin install)
+# 2. Restart: docker compose down && docker compose up -d
+# 3. Verify: Run Lesson 11 cell 6 (GDS initialization) - should show version
+#
+# Troubleshooting:
+# - If GDS not available: Check Docker logs (docker compose logs neo4j)
+# - Plugin takes time to download on first run (~1-2 minutes)
+# - If still failing: Delete volume (docker volume rm neo4j-data) and restart
+# ============================================================================
+
 services:
   neo4j:
     image: neo4j:5.14-community
     container_name: pe-graph-neo4j
     environment:
       NEO4J_AUTH: neo4j/your_password_here
+      NEO4J_PLUGINS: '["graph-data-science"]'
     ports:
       - "7474:7474"  # Browser
       - "7687:7687"  # Bolt
