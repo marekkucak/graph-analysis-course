@@ -486,13 +486,52 @@ This document maps the complete 19-lesson path with objectives, prerequisites, a
 Each capstone applies all prior lessons to a complete business scenario.
 
 ### Lesson 15 — Capstone: Support Escalation Analysis
-**Objective**: Diagnose support system bottlenecks  
+**Objective**: Diagnose support system bottlenecks and identify hidden experts using graph analysis  
 **Duration**: 120 minutes  
-**Prerequisites**: Lessons 0-8, optionally 9-13  
-**Dataset**: Support escalation with ground truth  
-**Deliverable**: Report identifying hidden experts and bottlenecks
+**Prerequisites**: Lessons 0-8 (foundational), optionally 9-13  
+**Status**: ✓ Implemented and tested
 
+**Key Concepts**:
+- Build escalation network graphs from support data
+- Identify bottleneck agents (high in-degree, overloaded)
+- Find hidden experts via scoring: resolution rate, escalation patterns, betweenness
+- Detect natural support teams via community detection
+- Analyze escalation paths and failure patterns
+- Generate actionable recommendations
+
+**Key Outcomes**:
+- Diagnose bottleneck agents using degree metrics and bottleneck scoring
+- Identify hidden organizational experts from network position
+- Discover natural team structures without org chart
+- Recommend process redesign (skill-based routing, knowledge transfer, workload balancing)
+- Create agent performance profiles with graph metrics
+
+**Dataset**: Support escalation network (agents, tickets, escalations)  
+**Data**: `data/seed/support_escalation/` (customers.csv, tickets.csv, escalations.csv, ticket_events.csv)  
+**Data Generation**: `src/data_generation/support_escalation.py`  
 **Notebook**: `notebooks/15_capstone_support_escalation.ipynb`
+
+**Analysis Flow**:
+1. Load support data and build escalation network
+2. Profile network: density, degree distribution, connectivity
+3. Calculate bottleneck scores: escalations received / own tickets
+4. Find bridge agents via betweenness centrality
+5. Detect communities: natural support teams
+6. Score hidden experts: resolution rate + escalation pattern + network position
+7. Visualize: bottlenecks, experts, team structure, network graph
+8. Generate recommendations: redistribution, knowledge transfer, rebalancing
+
+**Student Challenge**:
+- Can you predict which agents will burn out in 90 days?
+- How would you redesign the escalation routing to reduce bottleneck load by 30%?
+- What metrics would you monitor to prevent hidden experts from leaving?
+
+**Real-World Applications**:
+- Support team optimization and process redesign
+- Expert identification for knowledge transfer programs
+- Burnout prevention and workload balancing
+- Skill-based team formation
+- Performance and career development planning
 
 ---
 
