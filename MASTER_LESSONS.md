@@ -679,13 +679,104 @@ Each capstone applies all prior lessons to a complete business scenario.
 ---
 
 ### Lesson 18 — Capstone: Supplier Risk Analysis
-**Objective**: Assess supply chain concentration risk  
+**Objective**: Solve real supply chain problems using multi-layer graph analysis  
 **Duration**: 120 minutes  
-**Prerequisites**: Lessons 0-8  
-**Dataset**: Multi-tier supplier network  
-**Deliverable**: Risk assessment with dependency analysis
+**Prerequisites**: Lessons 0-8 (foundational)  
+**Status**: ✓ Implemented and tested
 
+**Key Concepts**:
+- Build multi-layer supply chain networks (suppliers, BUs, categories, locations, products)
+- Identify vendor consolidation opportunities via bipartite projection
+- Find single points of failure using centrality on product-supplier paths
+- Assess geopolitical risk exposure via geographic concentration analysis
+- Resolve duplicate vendors using similarity metrics (Jaccard, sequence matching)
+- Score vendor health via payment reliability temporal analysis
+- Combine multiple risk signals for comprehensive resilience scoring
+
+**Key Outcomes**:
+- Discover $50-100k+ annual cost savings via vendor consolidation
+- Identify critical suppliers threatening major revenue streams
+- Quantify supply chain exposure to geopolitical disruption
+- Detect and merge duplicate vendor records (data quality)
+- Flag deteriorating suppliers before financial failure
+- Create actionable recommendations with ROI and implementation timeline
+- Build executive summary for board-level supply chain strategy
+
+**Dataset**: Multi-tier supply chain network (500 suppliers, 8 BUs, 40 categories, 30 locations, 50 products)  
+**Data**: `data/seed/supplier_risk/` (8 CSVs: suppliers, business_units, categories, contracts, invoices, locations, products, risk_events)  
+**Data Generation**: `src/data_generation/supplier_risk.py`  
 **Notebook**: `notebooks/18_capstone_supplier_risk.ipynb`
+
+**Network Scale**: ~2,200 nodes, ~24,000 edges; bipartite + weighted + spatial
+
+**5 Real Business Problems Solved**:
+1. **Cost Reduction via Consolidation** (Problem 1): Find multiple BUs buying same category from different vendors → consolidate for volume discount
+2. **Supply Chain Resilience** (Problem 2): Identify suppliers serving many critical products → single points of failure → quantify revenue at risk
+3. **Geopolitical Risk** (Problem 3): Map supplier geographic concentration → identify exposure to trade/conflict disruption
+4. **Data Quality** (Problem 4): Detect duplicate vendors (similar names) → consolidate contracts → reduce overhead
+5. **Vendor Health** (Problem 5): Track payment reliability over time → flag deteriorating suppliers → early warning system
+
+**Analysis Flow**:
+1. Load 8 CSVs; profile supplier health, payment reliability, geographic concentration, risk events
+2. Build multi-layer network: suppliers ↔ BUs (contracts), suppliers ↔ categories (supply), suppliers ↔ locations (geography), suppliers ↔ products (dependencies)
+3. Risk dashboard: supplier status distribution, on-time payment rates, event frequency, geographic risk heatmap
+4. **Problem 1 — Consolidation**: Bipartite projection (BU-Category-Supplier); find clusters where same BU buys same category from multiple suppliers
+5. **Problem 2 — Criticality**: Centrality on product-supplier subgraph; rank suppliers by revenue-at-risk; identify dual-source gaps
+6. **Problem 3 — Geopolitical**: Aggregate suppliers by location; calculate % spend in high-risk zones (score > 0.7) per category; risk heatmap
+7. **Problem 4 — Duplicates**: Jaccard similarity on supplier names; find matches >60% similarity; estimate consolidation spend
+8. **Problem 5 — Health**: Temporal analysis of invoices; on_time_payment rate by supplier; flag <75% reliability; correlate with risk events
+9. **Visualizations**: 4-panel dashboard (geopolitical risk vs. spend, consolidation savings opportunities, supplier criticality ranking, vendor health)
+10. **Executive Summary**: Top 5 recommendations with priority, impact, timeline, and ROI; total financial impact; implementation roadmap
+
+**5 Intentional Data Risks** (for teaching):
+- **Spend Fragmentation**: 3 BUs independently buy staffing → no volume discount, pay $150, $145, $160/hr
+- **Single-Source Critical**: SUPP_0147 supplies 5+ products ($50M+ revenue) with no backup → 6-month sourcing lead time
+- **Geopolitical Concentration**: 15% suppliers in Taiwan (risk_score=0.85); electronics category 60% Taiwan-dependent
+- **Duplicate Vendors**: "Acme Inc", "ACME Corp", "Acme Corporation" appear as 3 separate vendors across BUs
+- **Payment Defaults**: SUPP_0089, SUPP_0234 have 65% on-time rate vs. 95% normal; correlated with high risk_score
+
+**Student Challenge**:
+- Can you identify $50k savings without damaging supplier relationships?
+- If SUPP_0147 fails tomorrow, which products halt and for how long?
+- Design a nearshoring strategy to reduce Taiwan exposure from 60% to 30% in electronics category
+- How many duplicate vendors are you unknowingly paying overhead for?
+- Which suppliers are early-warning signals for failure (declining payment reliability + rising risk events)?
+
+**Real-World Applications**:
+- **Procurement Finance**: Cost reduction via consolidation and spend analytics
+- **Supply Chain Risk Management**: Resilience planning, contingency sourcing, dual-source strategy
+- **Geopolitical Risk Hedging**: Diversification strategy, nearshoring, trade compliance
+- **Vendor Management**: Performance monitoring, health scoring, contract optimization
+- **Master Data Management**: Duplicate detection, entity resolution, data quality assurance
+- **Business Continuity**: Single points of failure analysis, backup supplier qualification
+- **Strategic Sourcing**: Category rationalization, supplier tiering, risk-based segmentation
+
+**Key Insights**:
+- **Multi-layer thinking**: Single-layer network (just suppliers) misses consolidation and criticality patterns
+- **Financial dimension**: Weight edges by contract value for impact-weighted analysis (not just counts)
+- **Similarity matters**: Name similarity + behavioral patterns (payment reliability) reveal duplicates better than exact matching
+- **Temporal signals**: Payment reliability degradation + risk events = early warning system
+- **Holistic scoring**: No single metric captures risk (combine centrality + reliability + geography)
+
+**Comparison to Other Capstones**:
+| Capstone | Focus | Network Type | Graph Technique |
+|----------|-------|--------------|-----------------|
+| Lesson 15 (Escalation) | Organizational bottlenecks | Directed, weighted | Centrality, community |
+| Lesson 16 (Approval) | Process optimization | Directed, weighted | Centrality, clustering |
+| Lesson 17 (Experts) | Knowledge distribution | Directed, temporal | Multi-metric scoring, classification |
+| **Lesson 18 (Supplier)** | **Financial + Risk** | **Bipartite + multi-layer + spatial** | **Projection + similarity + temporal** |
+
+**Testing Notes**:
+- Data generator creates 8 CSVs: 500 suppliers, 8 BUs, 40 categories, 1,500 contracts, 20,000 invoices, 30 locations, 50 products, 100 events
+- All 10 cells execute end-to-end without errors
+- Identifies 15+ consolidation opportunities with $100k+ total savings potential
+- Detects 3-5 critical suppliers with single-source risk
+- Maps geopolitical exposure (15% in high-risk zones as designed)
+- Finds 50+ potential duplicate vendors via Jaccard >60% similarity
+- Flags 5-10 at-risk suppliers with <75% on-time payment
+- 4-panel visualization renders correctly with actionable insights
+
+---
 
 ---
 
