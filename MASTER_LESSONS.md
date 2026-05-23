@@ -536,13 +536,59 @@ Each capstone applies all prior lessons to a complete business scenario.
 ---
 
 ### Lesson 16 — Capstone: Approval Handoff Optimization
-**Objective**: Optimize approval processes  
+**Objective**: Optimize approval processes by identifying bottlenecks and redesigning workflows for speed  
 **Duration**: 120 minutes  
-**Prerequisites**: Lessons 0-11  
-**Dataset**: Multi-step approval workflows  
-**Deliverable**: Recommended process redesign with time savings
+**Prerequisites**: Lessons 0-8 (foundational), optionally 9-11  
+**Status**: ✓ Implemented and tested
 
+**Key Concepts**:
+- Build approval network graphs from person-to-person handoffs
+- Identify bottleneck approvers (high in-degree, overloaded)
+- Find critical decision nodes via betweenness centrality
+- Analyze department-level approval dependencies and cross-dept flows
+- Detect natural approval clusters via community detection
+- Score optimization opportunities: automation, delegation, parallel approvals
+- Generate actionable redesign recommendations with impact estimates
+
+**Key Outcomes**:
+- Diagnose approval bottlenecks using degree metrics and bottleneck scoring
+- Identify critical decision-makers who block approval paths
+- Discover natural approval clusters without org hierarchy
+- Recommend process changes (automation, parallelization, delegation)
+- Estimate time savings and implementation priority (quick wins vs. structural)
+- Create department efficiency comparison and cross-dept dependency maps
+
+**Dataset**: Approval handoff network (people, departments, approvals)  
+**Data**: `data/seed/approval_handoffs/` (people.csv, departments.csv, approvals.csv, documents.csv)  
+**Data Generation**: `src/data_generation/approval_handoffs.py`  
 **Notebook**: `notebooks/16_capstone_approval_handoffs.ipynb`
+
+**Analysis Flow**:
+1. Load approval data and build directed approval network (person → person edges)
+2. Profile network: density, degree distribution, connectivity
+3. Calculate bottleneck scores: approvals received / approvals given
+4. Find critical nodes via betweenness centrality (on paths)
+5. Analyze departments: internal vs. external approvals, manager count, efficiency
+6. Detect communities: natural approval groups and inter-cluster flows
+7. Visualize: bottleneck distribution, criticality scores, dept efficiency, network
+8. Identify optimization opportunities: automation candidates, delegation targets, parallel paths
+9. Generate recommendations: priority ranking, impact estimates, implementation roadmap
+
+**Student Challenge**:
+- Can you identify which approvals are just rubber stamps vs. adding real value?
+- What would happen if we removed the #1 bottleneck person? (criticality analysis)
+- How would you redesign the approval process to cut cycle time in half?
+- What departments have most dependencies on each other?
+
+**Real-World Applications**:
+- Approval workflow automation (eliminate low-value reviews)
+- Manager workload analysis and burnout prevention
+- Process redesign (parallel vs. sequential approvals)
+- SLA optimization (reduce approval time)
+- Delegation strategy (push decisions down org hierarchy)
+- Organizational design and team restructuring based on natural clusters
+
+---
 
 ---
 
