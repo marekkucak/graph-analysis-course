@@ -781,13 +781,105 @@ Each capstone applies all prior lessons to a complete business scenario.
 ---
 
 ### Lesson 19 — Capstone: Portfolio Benchmark
-**Objective**: Benchmark corporate portfolio  
+**Objective**: Optimize corporate portfolio strategy using multi-layer graph analysis  
 **Duration**: 120 minutes  
-**Prerequisites**: Lessons 0-13  
-**Dataset**: Multi-company financial and network data  
-**Deliverable**: Peer comparison analysis with strategic insights
+**Prerequisites**: Lessons 0-13 (foundational + intermediate)  
+**Status**: ✓ Implemented and tested
 
+**Key Concepts**:
+- Build multi-layer product/customer/market/supplier networks
+- Measure revenue concentration risk via centrality metrics
+- Identify market coverage gaps via bipartite graph projections
+- Discover cross-sell opportunities through common neighbor analysis
+- Classify portfolio health using BCG matrix (stars, cows, dogs, questions)
+- Map supply chain vulnerabilities via betweenness centrality
+- Calculate financial impact and strategic value creation
+
+**Key Outcomes**:
+- Identify critical revenue drivers and concentration risks ($100M+ mitigation)
+- Map market gaps and competitive positioning (unserved TAM quantification)
+- Discover $50M+ cross-sell upsell opportunities
+- Identify single-source supply vulnerabilities and resilience gaps
+- Classify portfolio health across product lifecycle stages
+- Generate strategic roadmap with $200M+ value creation (3-year impact)
+- Create executive-ready portfolio optimization dashboard
+
+**Dataset**: Corporate product portfolio ($4.3B revenue, 50 products, 300+ customers, 25 markets)  
+**Data**: `data/seed/portfolio_benchmark/` (9 CSVs: products, customers, purchases, markets, suppliers, competitors, product_market_penetration, product_supplier_mapping, competitor_products)  
+**Data Generation**: `src/data_generation/portfolio_benchmark.py`  
 **Notebook**: `notebooks/19_capstone_portfolio_benchmark.ipynb`
+
+**Network Scale**: ~425 primary nodes (products, customers, markets, suppliers, competitors), ~2,676 edges; multi-layer financial + competitive + supply networks
+
+**5 Real Business Problems Solved**:
+1. **Revenue Concentration Risk** (Problem 1): Which products drive majority of revenue? Single-product failure exposure? → Degree/strength centrality identifies critical revenue nodes
+2. **Market Positioning & Gaps** (Problem 2): Are we in right markets? Missing high-growth opportunities? → Bipartite product-market projection reveals gaps; competitive overlap analysis
+3. **Cross-Sell Opportunities** (Problem 3): Which customers could buy more? Which segments underserved? → Common neighbors analysis + path finding identifies $50M+ TAM
+4. **Supply Chain Vulnerability** (Problem 4): Single-source supplier risk? Revenue exposure? → Betweenness centrality on product-supplier graph identifies critical dependencies
+5. **Portfolio Health** (Problem 5): Which products are stars vs. dogs? Portfolio aging? → BCG matrix classification via lifecycle + growth + market share
+
+**Analysis Flow**:
+1. Load 9 CSVs; profile revenue, customer segments, market reach, supplier concentration
+2. Build multi-layer network: products ↔ customers (revenue), products ↔ markets (penetration), products ← suppliers (dependencies), products ↔ competitors (positioning)
+3. Risk dashboard: revenue concentration, customer concentration, market coverage, supplier criticality, lifecycle distribution
+4. **Problem 1 — Concentration**: Degree/strength centrality on revenue graph; top 3 products = X% revenue; diversification opportunities
+5. **Problem 2 — Market Positioning**: Bipartite product-market projection; community detection identifies market clusters; competitive overlap; TAM in unserved markets
+6. **Problem 3 — Cross-Sell**: Common neighbors (customers buying A not B); segment-specific penetration gaps; $50M+ opportunity quantification
+7. **Problem 4 — Supply Risk**: Product-supplier graph; betweenness centrality identifies bottlenecks; single-source risk assessment; revenue-at-risk calculation
+8. **Problem 5 — Portfolio Health**: BCG matrix (growth vs. market share); lifecycle classification; revenue distribution across stars/cows/dogs; health score
+9. **Visualizations**: 4-panel dashboard (revenue Pareto, market coverage heatmap, BCG matrix bubble chart, supplier criticality ranking)
+10. **Executive Summary**: Top 5 strategic recommendations with priority, impact, timeline, ROI; financial impact summary ($200M+ value creation); 3-year strategic roadmap
+
+**5 Intentional Data Risks** (for teaching):
+- **Concentration Risk**: Top 3 products = 18% of $4.37B (concentration opportunity for growth)
+- **Market Gaps**: 3 high-growth markets completely unserved; competitors 40-60% present (TAM quantification needed)
+- **Segment Penetration Gap**: SMB segment 95% in Products 0-2 but only 10% in Product 3 ($50M upsell opportunity)
+- **Single-Source Critical Supplier**: SUPP_00 manufactures 7 products ($200M+ revenue) with no backups (6-month lead time risk)
+- **Portfolio Aging**: ~10% of products declining >10% YoY (harvest vs. growth-stage imbalance)
+
+**Student Challenge**:
+- Can you identify which 3 products should we focus investment on (stars) vs. divest (dogs)?
+- What's the TAM we're missing by not serving 3 high-growth markets?
+- Which customer segment has highest upsell potential and why?
+- If SUPP_00 fails tomorrow, which products halt and what's revenue at risk?
+- Design a portfolio optimization strategy to reduce concentration from current to <50% while growing revenue by $500M over 3 years.
+
+**Real-World Applications**:
+- **Portfolio Strategy**: Optimize product mix for profitability and growth
+- **Market Analysis**: Identify TAM gaps and competitive threats
+- **Customer Success**: Target high-value upsell/cross-sell opportunities by segment
+- **Risk Management**: Supply chain resilience, single-source mitigation
+- **Financial Planning**: Allocate R&D budget across stars/cows/questions/dogs
+- **M&A Strategy**: Identify portfolio gaps that could be filled via acquisition
+- **Strategic Planning**: 3-5 year roadmap balancing growth, profitability, and risk
+
+**Key Insights**:
+- **Multi-layer insight**: Single product-revenue view misses market position, supply risk, and cross-sell potential
+- **Bipartite projections**: Customer-product projection reveals segment gaps; product-market projection reveals geographic opportunities
+- **Financial dimensioning**: Weight edges by revenue/penetration % for impact-weighted analysis
+- **Portfolio management**: BCG matrix (simple but powerful) outperforms rank-based sorting for strategic allocation
+- **Risk scoring**: Combine multiple risk dimensions (concentration + supply + customer) for holistic resilience
+
+**Comparison to Other Capstones**:
+| Capstone | Domain | Focus | Network Type | Key Techniques |
+|----------|--------|-------|--------------|----------------|
+| Lesson 15 (Escalation) | Org. Structure | Process optimization | Directed, weighted | Centrality, community |
+| Lesson 16 (Approval) | Org. Process | Bottleneck analysis | Directed, weighted | Centrality, clustering |
+| Lesson 17 (Experts) | Knowledge Mgmt | Expert discovery | Directed, temporal | Multi-metric scoring |
+| Lesson 18 (Supplier) | Supply Chain | Risk assessment | Multi-layer, spatial | Similarity, temporal |
+| **Lesson 19 (Portfolio)** | **Strategic Planning** | **Value optimization** | **Multi-layer, financial** | **Centrality, projection, classification** |
+
+**Testing Notes**:
+- Data generator creates 9 CSVs: 50 products, 300 customers, 1,735 purchases, 25 markets, 30 suppliers, 20 competitors
+- All 10 cells execute end-to-end without errors
+- Network builds: ~425 nodes, ~2,676 edges
+- Identifies $4.37B annual revenue across portfolio
+- Detects top 3 products concentration, market gaps, cross-sell opportunities
+- Revenue concentration analysis works correctly
+- Market coverage heatmap renders properly
+- BCG matrix classification functional (stars, cows, dogs, questions)
+- Supplier criticality ranking identifies single-source risks
+- Executive summary generates strategic recommendations with quantified value ($200M+)
 
 ---
 
