@@ -402,18 +402,82 @@ This document maps the complete 19-lesson path with objectives, prerequisites, a
 
 ## Part IV — Advanced and Capstone (Lessons 14-19)
 
-### Lesson 14 — GraphRAG and Evidence Graphs (Optional)
-**Objective**: Build evidence graphs for AI explainability  
-**Duration**: 90 minutes  
-**Prerequisites**: Lesson 13  
-**Optional**: Can skip for focused path  
+### Lesson 14 — GraphRAG and Evidence Graphs
+**Objective**: Build evidence graphs for AI explainability and hierarchical retrieval-augmented generation  
+**Duration**: 120 minutes  
+**Prerequisites**: Lesson 13 (Link Prediction)  
 **Key Concepts**:
-- Reasoning over graphs
-- Evidence chains
-- Query expansion
-- Integration with LLMs
+- Evidence graph construction from relational data
+- Entity extraction simulation
+- Hierarchical community detection (Leiden algorithm)
+- Evidence chain generation
+- GraphRAG query system (vs. naive retrieval)
+- Global sensemaking queries
+- Path-based queries with community evidence ranking
+- Pattern detection (bridge nodes, anomalies)
+- Relevance scoring and ranking
 
-**Notebook**: `notebooks/14_graphrag_evidence_graph_optional.ipynb`
+**Key Outcomes**:
+- Build evidence graphs with entity and relationship structures
+- Apply hierarchical community detection (Level 0 coarse, Level 1 fine-grained)
+- Compare naive keyword matching vs. hierarchical query ranking
+- Understand comprehensiveness, diversity, and directness tradeoffs
+- Generate community summaries for multi-level decision support
+- Use community structure for evidence-based ranking
+- Connect evidence graphs to link prediction (Lesson 13 integration)
+
+**Datasets**: Document policy network (43 documents, 290 references)  
+**Data**: `data/seed/document_policy/` (documents.csv, references.csv)  
+**Data Generation**: `src/data_generation/document_policy.py`  
+**Notebook**: `notebooks/14_graphrag_evidence_graphs.ipynb`
+
+**Architecture Pattern**:
+1. **Ingestion**: Extract entities and relationships from documents
+2. **Graph Building**: Create directed graph with properties/descriptions
+3. **Hierarchical Analysis**: Detect communities at multiple levels (Leiden algorithm)
+4. **Summarization**: Generate summaries for each community
+5. **Query Processing**: Compare naive vs. hierarchical ranking approaches
+6. **Evidence Ranking**: Use community structure to rank and explain results
+
+**Student Exercises**:
+- **Exercise 1**: Build evidence graph from hidden_experts dataset with hierarchical community detection
+- **Exercise 2**: Query hierarchy at different levels and observe precision vs. breadth tradeoff
+- **Exercise 3**: Link prediction using community membership as ML features (bridge to Lesson 13)
+
+**Real-World Applications**:
+1. **Sales Account Expansion**: Discover cross-sell opportunities within customer communities
+2. **IT Incident Blast Radius**: Understand failure propagation and system dependencies
+3. **Compliance & Risk Evidence**: Build audit trails with multi-level evidence layers
+4. **Hidden Experts Discovery**: Identify subject matter experts via bridge nodes connecting communities
+5. **Scientific Literature Synthesis**: Extract research themes and detect emerging fields
+
+**Key Insights**:
+- **Comprehensiveness**: GraphRAG covers more communities than naive retrieval
+- **Explainability**: Every result traces back to evidence (community → summary → entities)
+- **Multi-level support**: Executives see communities, analysts see details
+- **Global patterns**: Answer "what are the themes?" not just "find this entity"
+- **Community features**: Modularity score, size, relationship density inform business decisions
+
+**Comparison Matrix**:
+| Dimension | Vector RAG | GraphRAG | Graph Algorithms |
+|-----------|-----------|----------|-----------------|
+| Query Speed | Fast | Slower | Medium |
+| Comprehensiveness | Medium | High | Medium |
+| Explainability | Low | High | Medium |
+| Global Patterns | Weak | Strong | Strong |
+| Specific Lookups | Strong | Medium | Medium |
+
+**How Lessons 12-14 Connect**:
+- **Lesson 12** (Graph Features): Engineer features from graph structure
+- **Lesson 13** (Link Prediction): Use community structure as strong edge predictor
+- **Lesson 14** (Evidence Graphs): Apply hierarchical communities for explainability and global reasoning
+
+**Testing Notes**:
+- Tested in synthetic data mode (no Neo4j required)
+- Uses NetworkX community detection (greedy_modularity_communities fallback)
+- Python-louvain preferred if available for better performance
+- All 33 cells execute end-to-end without errors
+- Datasets verified: 43 documents, 290 references edges
 
 ---
 
