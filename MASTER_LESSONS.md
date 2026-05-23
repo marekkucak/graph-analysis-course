@@ -593,13 +593,88 @@ Each capstone applies all prior lessons to a complete business scenario.
 ---
 
 ### Lesson 17 — Capstone: Hidden Experts Discovery
-**Objective**: Identify key knowledge holders  
+**Objective**: Identify hidden organizational expertise using multi-metric centrality scoring and classify expert types  
 **Duration**: 120 minutes  
-**Prerequisites**: Lessons 0-5, 9-11  
-**Dataset**: Collaboration and escalation patterns  
-**Deliverable**: Organization chart of experts with impact assessment
+**Prerequisites**: Lessons 0-5 (foundational), optionally 9-11  
+**Status**: ✓ Implemented and tested
 
+**Key Concepts**:
+- Build escalation network graphs from support/collaboration data
+- Compute 5 centrality metrics (in-degree, betweenness, closeness, eigenvector, issue resolution)
+- Score expertise using weighted composite metric (not just single centrality)
+- Classify experts by type: BOTTLENECK, BRIDGE, INFLUENCER, OVERLOADED, SILOED
+- Identify knowledge transfer targets, burnout risks, and underutilized expertise
+- Assess organizational resilience and single points of failure
+- Generate succession planning and knowledge transfer recommendations
+
+**Key Outcomes**:
+- Discover hidden experts not visible in org chart (bridges, influencers)
+- Identify bottleneck gatekeepers blocking escalation paths
+- Find siloed experts with underutilized knowledge
+- Quantify burnout risk (overload + isolation combination)
+- Assess org resilience via critical node analysis
+- Generate actionable knowledge transfer and succession plans
+- Create expert type profiles with specific retention/development strategies
+
+**Dataset**: Hidden experts escalation network (teams, people, issues, escalations)  
+**Data**: `data/seed/hidden_experts/` (teams.csv, people.csv, issues.csv, escalations.csv)  
+**Data Generation**: `src/data_generation/hidden_experts.py`  
 **Notebook**: `notebooks/17_capstone_hidden_experts.ipynb`
+
+**Network Size**: 18 people across 5 teams, 180 weighted escalation edges, 150 issues, 5 intentional anomalies
+
+**Analysis Flow**:
+1. Load teams, people, issues, escalations; profile distributions by team/seniority
+2. Build directed escalation graph with node attributes and weighted edges
+3. Attach issue resolution metrics per person (count, avg severity handled)
+4. Calculate basic network stats: density, degree distribution, team distribution
+5. Compute 5 centrality metrics: in-degree, betweenness, closeness, eigenvector + issue resolution
+6. Score experts: weighted composite (25% trust, 20% gatekeeper risk, 15% reach, 20% influence, 20% impact)
+7. Classify by type: BOTTLENECK (high between + high in), BRIDGE (high close, low between), INFLUENCER (high eigen), OVERLOADED (high in), SILOED (high out, low in)
+8. Detect communities via greedy modularity; compare to org structure
+9. Visualize: expert position map (between vs in-degree), top experts, influence distribution, type breakdown
+10. Generate recommendations: knowledge transfer targets, bottleneck mitigation, leverage hidden expertise, resilience score
+
+**Student Challenge**:
+- Can you predict who will burn out in 90 days? (Combine overload + low influence)
+- What's the cost of losing the #1 bottleneck person? (Criticality analysis)
+- How would you redesign escalation paths to reduce single points of failure?
+- Which hidden expert is most underutilized? (Siloed analysis with highest out-degree)
+- What happens if we remove PERSON_01 (the gatekeeper)?
+
+**Real-World Applications**:
+- **Succession planning**: Identify who to groom for critical roles
+- **Knowledge transfer programs**: Target high-expertise, high-burnout-risk people
+- **Org resilience**: Reduce dependency on bottleneck people
+- **Team restructuring**: Use community detection to reorganize along natural lines
+- **Burnout prevention**: Monitor overloaded experts and influencers
+- **Mentorship pairing**: Match experts with juniors strategically
+- **Career development**: Different pathways for different expertise types
+
+**Key Insights**:
+- **Expertise ≠ Position**: A junior can be the #1 expert (gatekeeper, bridge)
+- **Multiple metrics matter**: Single centrality (e.g., in-degree) misses influencers, bridges
+- **Type matters more than rank**: A BRIDGE is fundamentally different from BOTTLENECK (both high-score but different risks/actions)
+- **Hidden vulnerability**: Siloed experts represent risk (knowledge loss) AND opportunity (untapped potential)
+- **Resilience = redundancy**: Organizations need depth in critical expertise (at least 2 per type)
+
+**Engineered Anomalies in Dataset** (for teaching):
+- **PERSON_00** (Overloaded): High in-degree → bottleneck, burnout risk
+- **PERSON_01** (Gatekeeper): High betweenness, low seniority → critical dependency on junior
+- **PERSON_02** (Bridge): High closeness, cross-team → integrator, should be protected
+- **PERSON_03** (Influencer): High eigenvector, connected to experts → opinion leader
+- **PERSON_04** (Siloed): High out-degree, low in-degree → underutilized specialist
+
+**Testing Notes**:
+- Tested in synthetic data mode (no Neo4j required)
+- All 4 CSVs load successfully: 5 teams, 18 people, 150 issues, 180 escalation edges
+- Centrality metrics computed without errors
+- Community detection finds 3-5 natural clusters
+- Expert scoring and classification assigns all 18 people to types
+- All 10 cells execute end-to-end
+- 4-panel visualization renders correctly
+
+---
 
 ---
 
