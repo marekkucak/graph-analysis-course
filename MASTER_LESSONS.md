@@ -363,29 +363,40 @@ This document maps the complete 19-lesson path with objectives, prerequisites, a
 ---
 
 ### Lesson 13 — Embeddings and Link Prediction
-**Objective**: Learn modern graph representation learning  
+**Objective**: Predict missing relationships using graph features and similarity metrics  
 **Duration**: 120 minutes  
 **Prerequisites**: Lesson 12  
+**Requires**: Neo4j running  
 **Key Concepts**:
-- Node embeddings (shallow and GNNs)
-- Link prediction task
-- Similarity in embedding space
-- Evaluation metrics for ranking
-- Applications
+- Link prediction as supervised learning on node pairs
+- Local similarity metrics (Jaccard, Adamic-Adar)
+- Global GDS metrics (PageRank, degree, communities)
+- Feature engineering for edge prediction
+- Evaluation metrics for ranking (AUC, precision@k)
+- Baseline vs. ML model comparison
 
 **Key Outcomes**:
-- Generate node embeddings
-- Predict missing links
-- Evaluate predictions
-- Apply to real problems (recommendations, etc.)
+- Engineer features from graph structure for link prediction
+- Train and compare ML models on edge prediction task
+- Use AUC and ROC curves for ranking evaluation
+- Interpret feature importance
+- Deploy link prediction for business problems
 
+**Datasets**: Document policy network (100 documents, 290 REFERENCES edges)  
+**Data**: `data/seed/document_policy/` (CSV files)  
 **Notebook**: `notebooks/13_embeddings_link_prediction.ipynb`
 
 **Student Exercises**:
-- Generate embeddings
-- Predict next collaboration
-- Evaluate against ground truth
-- Recommend partnerships
+- Engineer new features (preferential attachment, PageRank product) for improved AUC
+- Predict links on held-out documents (generalization test)
+- Compare different similarity metrics (Jaccard vs. Pearson vs. Adamic-Adar)
+
+**Real-World Applications**:
+- Document recommendation systems
+- Expert matching and ticket routing
+- Knowledge graph completion
+- Quality assurance (missing link detection)
+- Cross-sell and supplier risk management
 
 ---
 
