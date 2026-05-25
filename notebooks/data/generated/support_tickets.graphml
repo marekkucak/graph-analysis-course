@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d14" for="edge" attr.name="ticket_id" attr.type="string"/>
-<key id="d13" for="edge" attr.name="escalation_level" attr.type="long"/>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d16" for="edge" attr.name="ticket_ids" attr.type="string"/>
+<key id="d15" for="edge" attr.name="max_escalation_level" attr.type="long"/>
+<key id="d14" for="edge" attr.name="min_escalation_level" attr.type="long"/>
+<key id="d13" for="edge" attr.name="escalation_count" attr.type="long"/>
 <key id="d12" for="edge" attr.name="ticket_priority" attr.type="string"/>
 <key id="d11" for="edge" attr.name="edge_type" attr.type="string"/>
 <key id="d10" for="node" attr.name="resolved_date" attr.type="double"/>
@@ -604,25 +606,25 @@
   <data key="d8">2024-11-28 03:10:33</data>
   <data key="d9">2024-12-20 03:10:33</data>
 </node>
-<node id="Supervisor_01">
+<node id="Agent_L1_01">
   <data key="d0">agent</data>
 </node>
 <node id="Agent_L2_02">
   <data key="d0">agent</data>
 </node>
-<node id="Manager_01">
-  <data key="d0">agent</data>
-</node>
-<node id="Agent_L1_01">
-  <data key="d0">agent</data>
-</node>
 <node id="Agent_L1_03">
+  <data key="d0">agent</data>
+</node>
+<node id="Supervisor_01">
   <data key="d0">agent</data>
 </node>
 <node id="Agent_L1_02">
   <data key="d0">agent</data>
 </node>
 <node id="Agent_L2_01">
+  <data key="d0">agent</data>
+</node>
+<node id="Manager_01">
   <data key="d0">agent</data>
 </node>
 <edge source="CUST_001" target="TKT_0016">
@@ -825,49 +827,67 @@
   <data key="d11">creates</data>
   <data key="d12">Medium</data>
 </edge>
-<edge source="Supervisor_01" target="Agent_L2_02">
-  <data key="d11">escalates</data>
-  <data key="d13">2</data>
-  <data key="d14">TKT_0030</data>
-</edge>
-<edge source="Supervisor_01" target="Agent_L2_01">
-  <data key="d11">escalates</data>
-  <data key="d13">2</data>
-  <data key="d14">TKT_0050</data>
-</edge>
-<edge source="Agent_L2_02" target="Agent_L1_01">
+<edge source="Agent_L1_01" target="Agent_L2_01">
   <data key="d11">escalates</data>
   <data key="d13">1</data>
-  <data key="d14">TKT_0043</data>
+  <data key="d14">1</data>
+  <data key="d15">1</data>
+  <data key="d16">TKT_0050</data>
 </edge>
-<edge source="Agent_L2_02" target="Agent_L1_03">
+<edge source="Agent_L1_01" target="Agent_L2_02">
   <data key="d11">escalates</data>
-  <data key="d13">1</data>
-  <data key="d14">TKT_0046</data>
-</edge>
-<edge source="Agent_L2_02" target="Manager_01">
-  <data key="d11">escalates</data>
-  <data key="d13">2</data>
-  <data key="d14">TKT_0008</data>
+  <data key="d13">4</data>
+  <data key="d14">1</data>
+  <data key="d15">1</data>
+  <data key="d16">TKT_0001,TKT_0006,TKT_0016,TKT_0043</data>
 </edge>
 <edge source="Agent_L2_02" target="Agent_L1_02">
   <data key="d11">escalates</data>
   <data key="d13">1</data>
-  <data key="d14">TKT_0018</data>
+  <data key="d14">1</data>
+  <data key="d15">1</data>
+  <data key="d16">TKT_0018</data>
 </edge>
-<edge source="Agent_L1_01" target="Agent_L2_01">
+<edge source="Agent_L2_02" target="Agent_L1_03">
+  <data key="d11">escalates</data>
+  <data key="d13">4</data>
+  <data key="d14">1</data>
+  <data key="d15">1</data>
+  <data key="d16">TKT_0008,TKT_0035,TKT_0037,TKT_0046</data>
+</edge>
+<edge source="Agent_L2_02" target="Manager_01">
   <data key="d11">escalates</data>
   <data key="d13">1</data>
-  <data key="d14">TKT_0050</data>
+  <data key="d14">2</data>
+  <data key="d15">2</data>
+  <data key="d16">TKT_0008</data>
+</edge>
+<edge source="Agent_L2_02" target="Supervisor_01">
+  <data key="d11">escalates</data>
+  <data key="d13">3</data>
+  <data key="d14">2</data>
+  <data key="d15">2</data>
+  <data key="d16">TKT_0009,TKT_0017,TKT_0030</data>
 </edge>
 <edge source="Agent_L1_03" target="Agent_L2_01">
   <data key="d11">escalates</data>
+  <data key="d13">2</data>
+  <data key="d14">1</data>
+  <data key="d15">1</data>
+  <data key="d16">TKT_0002,TKT_0039</data>
+</edge>
+<edge source="Supervisor_01" target="Agent_L2_01">
+  <data key="d11">escalates</data>
   <data key="d13">1</data>
-  <data key="d14">TKT_0039</data>
+  <data key="d14">2</data>
+  <data key="d15">2</data>
+  <data key="d16">TKT_0050</data>
 </edge>
 <edge source="Agent_L1_02" target="Agent_L2_01">
   <data key="d11">escalates</data>
-  <data key="d13">1</data>
-  <data key="d14">TKT_0044</data>
+  <data key="d13">2</data>
+  <data key="d14">1</data>
+  <data key="d15">1</data>
+  <data key="d16">TKT_0042,TKT_0044</data>
 </edge>
 </graph></graphml>

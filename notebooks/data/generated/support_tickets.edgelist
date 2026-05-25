@@ -1,59 +1,59 @@
-CUST_001 TKT_0016 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_001 TKT_0038 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_001 TKT_0041 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_002 TKT_0002 {'edge_type': 'creates', 'ticket_priority': 'Low'}
-CUST_003 TKT_0015 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_003 TKT_0035 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_003 TKT_0036 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_004 TKT_0001 {'edge_type': 'creates', 'ticket_priority': 'Critical'}
-CUST_004 TKT_0005 {'edge_type': 'creates', 'ticket_priority': 'Critical'}
-CUST_004 TKT_0032 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_005 TKT_0012 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_005 TKT_0014 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_005 TKT_0030 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_006 TKT_0033 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_007 TKT_0010 {'edge_type': 'creates', 'ticket_priority': 'High'}
-CUST_007 TKT_0013 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_007 TKT_0018 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_007 TKT_0019 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_007 TKT_0023 {'edge_type': 'creates', 'ticket_priority': 'Low'}
-CUST_008 TKT_0003 {'edge_type': 'creates', 'ticket_priority': 'Critical'}
-CUST_008 TKT_0004 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_008 TKT_0025 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_008 TKT_0044 {'edge_type': 'creates', 'ticket_priority': 'High'}
-CUST_009 TKT_0017 {'edge_type': 'creates', 'ticket_priority': 'Low'}
-CUST_009 TKT_0027 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_009 TKT_0037 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_009 TKT_0042 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_009 TKT_0047 {'edge_type': 'creates', 'ticket_priority': 'High'}
-CUST_010 TKT_0006 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_010 TKT_0039 {'edge_type': 'creates', 'ticket_priority': 'Low'}
-CUST_011 TKT_0011 {'edge_type': 'creates', 'ticket_priority': 'High'}
-CUST_012 TKT_0022 {'edge_type': 'creates', 'ticket_priority': 'High'}
-CUST_012 TKT_0028 {'edge_type': 'creates', 'ticket_priority': 'High'}
-CUST_012 TKT_0031 {'edge_type': 'creates', 'ticket_priority': 'Critical'}
-CUST_013 TKT_0008 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_013 TKT_0009 {'edge_type': 'creates', 'ticket_priority': 'Low'}
-CUST_013 TKT_0020 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_013 TKT_0021 {'edge_type': 'creates', 'ticket_priority': 'Low'}
-CUST_014 TKT_0007 {'edge_type': 'creates', 'ticket_priority': 'Low'}
-CUST_014 TKT_0046 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_014 TKT_0050 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_016 TKT_0034 {'edge_type': 'creates', 'ticket_priority': 'Low'}
-CUST_016 TKT_0040 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_016 TKT_0045 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_016 TKT_0048 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_017 TKT_0029 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_017 TKT_0049 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_019 TKT_0026 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-CUST_020 TKT_0024 {'edge_type': 'creates', 'ticket_priority': 'High'}
-CUST_020 TKT_0043 {'edge_type': 'creates', 'ticket_priority': 'Medium'}
-Supervisor_01 Agent_L2_02 {'edge_type': 'escalates', 'escalation_level': 2, 'ticket_id': 'TKT_0030'}
-Supervisor_01 Agent_L2_01 {'edge_type': 'escalates', 'escalation_level': 2, 'ticket_id': 'TKT_0050'}
-Agent_L2_02 Agent_L1_01 {'edge_type': 'escalates', 'escalation_level': 1, 'ticket_id': 'TKT_0043'}
-Agent_L2_02 Agent_L1_03 {'edge_type': 'escalates', 'escalation_level': 1, 'ticket_id': 'TKT_0046'}
-Agent_L2_02 Manager_01 {'edge_type': 'escalates', 'escalation_level': 2, 'ticket_id': 'TKT_0008'}
-Agent_L2_02 Agent_L1_02 {'edge_type': 'escalates', 'escalation_level': 1, 'ticket_id': 'TKT_0018'}
-Agent_L1_01 Agent_L2_01 {'edge_type': 'escalates', 'escalation_level': 1, 'ticket_id': 'TKT_0050'}
-Agent_L1_03 Agent_L2_01 {'edge_type': 'escalates', 'escalation_level': 1, 'ticket_id': 'TKT_0039'}
-Agent_L1_02 Agent_L2_01 {'edge_type': 'escalates', 'escalation_level': 1, 'ticket_id': 'TKT_0044'}
+CUST_001 TKT_0016
+CUST_001 TKT_0038
+CUST_001 TKT_0041
+CUST_002 TKT_0002
+CUST_003 TKT_0015
+CUST_003 TKT_0035
+CUST_003 TKT_0036
+CUST_004 TKT_0001
+CUST_004 TKT_0005
+CUST_004 TKT_0032
+CUST_005 TKT_0012
+CUST_005 TKT_0014
+CUST_005 TKT_0030
+CUST_006 TKT_0033
+CUST_007 TKT_0010
+CUST_007 TKT_0013
+CUST_007 TKT_0018
+CUST_007 TKT_0019
+CUST_007 TKT_0023
+CUST_008 TKT_0003
+CUST_008 TKT_0004
+CUST_008 TKT_0025
+CUST_008 TKT_0044
+CUST_009 TKT_0017
+CUST_009 TKT_0027
+CUST_009 TKT_0037
+CUST_009 TKT_0042
+CUST_009 TKT_0047
+CUST_010 TKT_0006
+CUST_010 TKT_0039
+CUST_011 TKT_0011
+CUST_012 TKT_0022
+CUST_012 TKT_0028
+CUST_012 TKT_0031
+CUST_013 TKT_0008
+CUST_013 TKT_0009
+CUST_013 TKT_0020
+CUST_013 TKT_0021
+CUST_014 TKT_0007
+CUST_014 TKT_0046
+CUST_014 TKT_0050
+CUST_016 TKT_0034
+CUST_016 TKT_0040
+CUST_016 TKT_0045
+CUST_016 TKT_0048
+CUST_017 TKT_0029
+CUST_017 TKT_0049
+CUST_019 TKT_0026
+CUST_020 TKT_0024
+CUST_020 TKT_0043
+Agent_L1_01 Agent_L2_01
+Agent_L1_01 Agent_L2_02
+Agent_L2_02 Agent_L1_02
+Agent_L2_02 Agent_L1_03
+Agent_L2_02 Manager_01
+Agent_L2_02 Supervisor_01
+Agent_L1_03 Agent_L2_01
+Supervisor_01 Agent_L2_01
+Agent_L1_02 Agent_L2_01

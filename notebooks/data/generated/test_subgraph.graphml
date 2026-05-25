@@ -1,245 +1,225 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d12" for="edge" attr.name="ticket_priority" attr.type="string"/>
 <key id="d11" for="edge" attr.name="edge_type" attr.type="string"/>
-<key id="d10" for="node" attr.name="resolved_date" attr.type="double"/>
-<key id="d9" for="node" attr.name="resolved_date" attr.type="string"/>
-<key id="d8" for="node" attr.name="created_date" attr.type="string"/>
-<key id="d7" for="node" attr.name="priority" attr.type="string"/>
-<key id="d6" for="node" attr.name="status" attr.type="string"/>
-<key id="d5" for="node" attr.name="ticket_id" attr.type="string"/>
-<key id="d4" for="node" attr.name="priority_level" attr.type="string"/>
-<key id="d3" for="node" attr.name="region" attr.type="string"/>
-<key id="d2" for="node" attr.name="name" attr.type="string"/>
-<key id="d1" for="node" attr.name="customer_id" attr.type="string"/>
+<key id="d10" for="node" attr.name="priority_level" attr.type="string"/>
+<key id="d9" for="node" attr.name="region" attr.type="string"/>
+<key id="d8" for="node" attr.name="name" attr.type="string"/>
+<key id="d7" for="node" attr.name="resolved_date" attr.type="string"/>
+<key id="d6" for="node" attr.name="resolved_date" attr.type="double"/>
+<key id="d5" for="node" attr.name="created_date" attr.type="string"/>
+<key id="d4" for="node" attr.name="priority" attr.type="string"/>
+<key id="d3" for="node" attr.name="status" attr.type="string"/>
+<key id="d2" for="node" attr.name="customer_id" attr.type="string"/>
+<key id="d1" for="node" attr.name="ticket_id" attr.type="string"/>
 <key id="d0" for="node" attr.name="node_type" attr.type="string"/>
-<graph edgedefault="undirected"><node id="CUST_009">
-  <data key="d0">customer</data>
-  <data key="d1">CUST_009</data>
-  <data key="d2">Garcia-James</data>
-  <data key="d3">South</data>
-  <data key="d4">Low</data>
-</node>
-<node id="TKT_0045">
+<graph edgedefault="undirected"><node id="TKT_0013">
   <data key="d0">ticket</data>
-  <data key="d5">TKT_0045</data>
-  <data key="d1">CUST_016</data>
-  <data key="d6">Open</data>
-  <data key="d7">Medium</data>
-  <data key="d8">2024-11-06 20:42:47</data>
-  <data key="d9">2024-11-09 20:42:47</data>
-</node>
-<node id="TKT_0034">
-  <data key="d0">ticket</data>
-  <data key="d5">TKT_0034</data>
-  <data key="d1">CUST_016</data>
-  <data key="d6">Open</data>
-  <data key="d7">Low</data>
-  <data key="d8">2024-09-02 22:41:27</data>
-  <data key="d9">2024-09-13 22:41:27</data>
-</node>
-<node id="TKT_0023">
-  <data key="d0">ticket</data>
-  <data key="d5">TKT_0023</data>
-  <data key="d1">CUST_007</data>
-  <data key="d6">Open</data>
-  <data key="d7">Low</data>
-  <data key="d8">2024-06-02 05:08:43</data>
-  <data key="d9">2024-06-28 05:08:43</data>
-</node>
-<node id="TKT_0042">
-  <data key="d0">ticket</data>
-  <data key="d5">TKT_0042</data>
-  <data key="d1">CUST_009</data>
-  <data key="d6">Open</data>
-  <data key="d7">Medium</data>
-  <data key="d8">2024-10-31 10:04:58</data>
-  <data key="d9">2024-11-23 10:04:58</data>
-</node>
-<node id="CUST_016">
-  <data key="d0">customer</data>
-  <data key="d1">CUST_016</data>
-  <data key="d2">Galloway-Wyatt</data>
-  <data key="d3">East</data>
-  <data key="d4">Low</data>
+  <data key="d1">TKT_0013</data>
+  <data key="d2">CUST_007</data>
+  <data key="d3">Open</data>
+  <data key="d4">Medium</data>
+  <data key="d5">2024-03-11 18:16:30</data>
+  <data key="d6">nan</data>
 </node>
 <node id="TKT_0015">
   <data key="d0">ticket</data>
-  <data key="d5">TKT_0015</data>
-  <data key="d1">CUST_003</data>
-  <data key="d6">Open</data>
-  <data key="d7">Medium</data>
-  <data key="d8">2024-04-16 06:05:51</data>
-  <data key="d10">nan</data>
-</node>
-<node id="TKT_0013">
-  <data key="d0">ticket</data>
-  <data key="d5">TKT_0013</data>
-  <data key="d1">CUST_007</data>
-  <data key="d6">Open</data>
-  <data key="d7">Medium</data>
-  <data key="d8">2024-03-11 18:16:30</data>
-  <data key="d10">nan</data>
-</node>
-<node id="CUST_017">
-  <data key="d0">customer</data>
-  <data key="d1">CUST_017</data>
-  <data key="d2">James Group</data>
-  <data key="d3">West</data>
+  <data key="d1">TKT_0015</data>
+  <data key="d2">CUST_003</data>
+  <data key="d3">Open</data>
   <data key="d4">Medium</data>
-</node>
-<node id="CUST_007">
-  <data key="d0">customer</data>
-  <data key="d1">CUST_007</data>
-  <data key="d2">Blake and Sons</data>
-  <data key="d3">East</data>
-  <data key="d4">Low</data>
-</node>
-<node id="CUST_005">
-  <data key="d0">customer</data>
-  <data key="d1">CUST_005</data>
-  <data key="d2">Guzman, Hoffman and Baldwin</data>
-  <data key="d3">East</data>
-  <data key="d4">High</data>
-</node>
-<node id="TKT_0030">
-  <data key="d0">ticket</data>
-  <data key="d5">TKT_0030</data>
-  <data key="d1">CUST_005</data>
-  <data key="d6">Open</data>
-  <data key="d7">Medium</data>
-  <data key="d8">2024-08-02 15:08:27</data>
-  <data key="d9">2024-08-24 15:08:27</data>
-</node>
-<node id="CUST_013">
-  <data key="d0">customer</data>
-  <data key="d1">CUST_013</data>
-  <data key="d2">Arnold Ltd</data>
-  <data key="d3">East</data>
-  <data key="d4">Medium</data>
-</node>
-<node id="TKT_0049">
-  <data key="d0">ticket</data>
-  <data key="d5">TKT_0049</data>
-  <data key="d1">CUST_017</data>
-  <data key="d6">Open</data>
-  <data key="d7">Medium</data>
-  <data key="d8">2024-11-27 11:41:39</data>
-  <data key="d9">2024-11-30 11:41:39</data>
-</node>
-<node id="CUST_020">
-  <data key="d0">customer</data>
-  <data key="d1">CUST_020</data>
-  <data key="d2">Reid, Ferguson and Sanchez</data>
-  <data key="d3">South</data>
-  <data key="d4">High</data>
-</node>
-<node id="CUST_003">
-  <data key="d0">customer</data>
-  <data key="d1">CUST_003</data>
-  <data key="d2">Mcclain, Miller and Henderson</data>
-  <data key="d3">Central</data>
-  <data key="d4">Low</data>
-</node>
-<node id="TKT_0001">
-  <data key="d0">ticket</data>
-  <data key="d5">TKT_0001</data>
-  <data key="d1">CUST_004</data>
-  <data key="d6">Open</data>
-  <data key="d7">Critical</data>
-  <data key="d8">2024-01-02 04:42:35</data>
-  <data key="d9">2024-01-20 04:42:35</data>
-</node>
-<node id="TKT_0018">
-  <data key="d0">ticket</data>
-  <data key="d5">TKT_0018</data>
-  <data key="d1">CUST_007</data>
-  <data key="d6">Open</data>
-  <data key="d7">Medium</data>
-  <data key="d8">2024-04-22 05:19:39</data>
-  <data key="d10">nan</data>
-</node>
-<node id="TKT_0037">
-  <data key="d0">ticket</data>
-  <data key="d5">TKT_0037</data>
-  <data key="d1">CUST_009</data>
-  <data key="d6">Open</data>
-  <data key="d7">Medium</data>
-  <data key="d8">2024-09-25 12:36:44</data>
-  <data key="d10">nan</data>
-</node>
-<node id="CUST_004">
-  <data key="d0">customer</data>
-  <data key="d1">CUST_004</data>
-  <data key="d2">Davis and Sons</data>
-  <data key="d3">East</data>
-  <data key="d4">Low</data>
-</node>
-<node id="TKT_0010">
-  <data key="d0">ticket</data>
-  <data key="d5">TKT_0010</data>
-  <data key="d1">CUST_007</data>
-  <data key="d6">Open</data>
-  <data key="d7">High</data>
-  <data key="d8">2024-03-06 13:33:09</data>
-  <data key="d10">nan</data>
-</node>
-<node id="TKT_0021">
-  <data key="d0">ticket</data>
-  <data key="d5">TKT_0021</data>
-  <data key="d1">CUST_013</data>
-  <data key="d6">Open</data>
-  <data key="d7">Low</data>
-  <data key="d8">2024-05-03 04:14:50</data>
-  <data key="d9">2024-05-13 04:14:50</data>
+  <data key="d5">2024-04-16 06:05:51</data>
+  <data key="d6">nan</data>
 </node>
 <node id="TKT_0043">
   <data key="d0">ticket</data>
-  <data key="d5">TKT_0043</data>
-  <data key="d1">CUST_020</data>
-  <data key="d6">Open</data>
-  <data key="d7">Medium</data>
-  <data key="d8">2024-11-04 15:26:06</data>
-  <data key="d9">2024-11-07 15:26:06</data>
+  <data key="d1">TKT_0043</data>
+  <data key="d2">CUST_020</data>
+  <data key="d3">Open</data>
+  <data key="d4">Medium</data>
+  <data key="d5">2024-11-04 15:26:06</data>
+  <data key="d7">2024-11-07 15:26:06</data>
 </node>
-<node id="TKT_0009">
+<node id="TKT_0001">
   <data key="d0">ticket</data>
-  <data key="d5">TKT_0009</data>
-  <data key="d1">CUST_013</data>
-  <data key="d6">Open</data>
-  <data key="d7">Low</data>
-  <data key="d8">2024-02-29 13:53:01</data>
-  <data key="d9">2024-03-25 13:53:01</data>
+  <data key="d1">TKT_0001</data>
+  <data key="d2">CUST_004</data>
+  <data key="d3">Open</data>
+  <data key="d4">Critical</data>
+  <data key="d5">2024-01-02 04:42:35</data>
+  <data key="d7">2024-01-20 04:42:35</data>
+</node>
+<node id="CUST_004">
+  <data key="d0">customer</data>
+  <data key="d2">CUST_004</data>
+  <data key="d8">Davis and Sons</data>
+  <data key="d9">East</data>
+  <data key="d10">Low</data>
+</node>
+<node id="TKT_0042">
+  <data key="d0">ticket</data>
+  <data key="d1">TKT_0042</data>
+  <data key="d2">CUST_009</data>
+  <data key="d3">Open</data>
+  <data key="d4">Medium</data>
+  <data key="d5">2024-10-31 10:04:58</data>
+  <data key="d7">2024-11-23 10:04:58</data>
+</node>
+<node id="TKT_0030">
+  <data key="d0">ticket</data>
+  <data key="d1">TKT_0030</data>
+  <data key="d2">CUST_005</data>
+  <data key="d3">Open</data>
+  <data key="d4">Medium</data>
+  <data key="d5">2024-08-02 15:08:27</data>
+  <data key="d7">2024-08-24 15:08:27</data>
+</node>
+<node id="CUST_017">
+  <data key="d0">customer</data>
+  <data key="d2">CUST_017</data>
+  <data key="d8">James Group</data>
+  <data key="d9">West</data>
+  <data key="d10">Medium</data>
+</node>
+<node id="TKT_0021">
+  <data key="d0">ticket</data>
+  <data key="d1">TKT_0021</data>
+  <data key="d2">CUST_013</data>
+  <data key="d3">Open</data>
+  <data key="d4">Low</data>
+  <data key="d5">2024-05-03 04:14:50</data>
+  <data key="d7">2024-05-13 04:14:50</data>
+</node>
+<node id="TKT_0037">
+  <data key="d0">ticket</data>
+  <data key="d1">TKT_0037</data>
+  <data key="d2">CUST_009</data>
+  <data key="d3">Open</data>
+  <data key="d4">Medium</data>
+  <data key="d5">2024-09-25 12:36:44</data>
+  <data key="d6">nan</data>
+</node>
+<node id="TKT_0045">
+  <data key="d0">ticket</data>
+  <data key="d1">TKT_0045</data>
+  <data key="d2">CUST_016</data>
+  <data key="d3">Open</data>
+  <data key="d4">Medium</data>
+  <data key="d5">2024-11-06 20:42:47</data>
+  <data key="d7">2024-11-09 20:42:47</data>
 </node>
 <node id="TKT_0040">
   <data key="d0">ticket</data>
-  <data key="d5">TKT_0040</data>
-  <data key="d1">CUST_016</data>
-  <data key="d6">Open</data>
-  <data key="d7">Medium</data>
-  <data key="d8">2024-10-16 13:58:16</data>
-  <data key="d10">nan</data>
+  <data key="d1">TKT_0040</data>
+  <data key="d2">CUST_016</data>
+  <data key="d3">Open</data>
+  <data key="d4">Medium</data>
+  <data key="d5">2024-10-16 13:58:16</data>
+  <data key="d6">nan</data>
 </node>
-<edge source="CUST_009" target="TKT_0037">
-  <data key="d11">creates</data>
-  <data key="d12">Medium</data>
-</edge>
-<edge source="CUST_009" target="TKT_0042">
-  <data key="d11">creates</data>
-  <data key="d12">Medium</data>
-</edge>
-<edge source="TKT_0045" target="CUST_016">
-  <data key="d11">creates</data>
-  <data key="d12">Medium</data>
-</edge>
-<edge source="TKT_0034" target="CUST_016">
-  <data key="d11">creates</data>
-  <data key="d12">Low</data>
-</edge>
-<edge source="TKT_0023" target="CUST_007">
-  <data key="d11">creates</data>
-  <data key="d12">Low</data>
-</edge>
-<edge source="CUST_016" target="TKT_0040">
+<node id="CUST_009">
+  <data key="d0">customer</data>
+  <data key="d2">CUST_009</data>
+  <data key="d8">Garcia-James</data>
+  <data key="d9">South</data>
+  <data key="d10">Low</data>
+</node>
+<node id="TKT_0034">
+  <data key="d0">ticket</data>
+  <data key="d1">TKT_0034</data>
+  <data key="d2">CUST_016</data>
+  <data key="d3">Open</data>
+  <data key="d4">Low</data>
+  <data key="d5">2024-09-02 22:41:27</data>
+  <data key="d7">2024-09-13 22:41:27</data>
+</node>
+<node id="CUST_020">
+  <data key="d0">customer</data>
+  <data key="d2">CUST_020</data>
+  <data key="d8">Reid, Ferguson and Sanchez</data>
+  <data key="d9">South</data>
+  <data key="d10">High</data>
+</node>
+<node id="TKT_0018">
+  <data key="d0">ticket</data>
+  <data key="d1">TKT_0018</data>
+  <data key="d2">CUST_007</data>
+  <data key="d3">Open</data>
+  <data key="d4">Medium</data>
+  <data key="d5">2024-04-22 05:19:39</data>
+  <data key="d6">nan</data>
+</node>
+<node id="CUST_013">
+  <data key="d0">customer</data>
+  <data key="d2">CUST_013</data>
+  <data key="d8">Arnold Ltd</data>
+  <data key="d9">East</data>
+  <data key="d10">Medium</data>
+</node>
+<node id="CUST_016">
+  <data key="d0">customer</data>
+  <data key="d2">CUST_016</data>
+  <data key="d8">Galloway-Wyatt</data>
+  <data key="d9">East</data>
+  <data key="d10">Low</data>
+</node>
+<node id="CUST_003">
+  <data key="d0">customer</data>
+  <data key="d2">CUST_003</data>
+  <data key="d8">Mcclain, Miller and Henderson</data>
+  <data key="d9">Central</data>
+  <data key="d10">Low</data>
+</node>
+<node id="TKT_0023">
+  <data key="d0">ticket</data>
+  <data key="d1">TKT_0023</data>
+  <data key="d2">CUST_007</data>
+  <data key="d3">Open</data>
+  <data key="d4">Low</data>
+  <data key="d5">2024-06-02 05:08:43</data>
+  <data key="d7">2024-06-28 05:08:43</data>
+</node>
+<node id="CUST_007">
+  <data key="d0">customer</data>
+  <data key="d2">CUST_007</data>
+  <data key="d8">Blake and Sons</data>
+  <data key="d9">East</data>
+  <data key="d10">Low</data>
+</node>
+<node id="TKT_0010">
+  <data key="d0">ticket</data>
+  <data key="d1">TKT_0010</data>
+  <data key="d2">CUST_007</data>
+  <data key="d3">Open</data>
+  <data key="d4">High</data>
+  <data key="d5">2024-03-06 13:33:09</data>
+  <data key="d6">nan</data>
+</node>
+<node id="TKT_0049">
+  <data key="d0">ticket</data>
+  <data key="d1">TKT_0049</data>
+  <data key="d2">CUST_017</data>
+  <data key="d3">Open</data>
+  <data key="d4">Medium</data>
+  <data key="d5">2024-11-27 11:41:39</data>
+  <data key="d7">2024-11-30 11:41:39</data>
+</node>
+<node id="TKT_0009">
+  <data key="d0">ticket</data>
+  <data key="d1">TKT_0009</data>
+  <data key="d2">CUST_013</data>
+  <data key="d3">Open</data>
+  <data key="d4">Low</data>
+  <data key="d5">2024-02-29 13:53:01</data>
+  <data key="d7">2024-03-25 13:53:01</data>
+</node>
+<node id="CUST_005">
+  <data key="d0">customer</data>
+  <data key="d2">CUST_005</data>
+  <data key="d8">Guzman, Hoffman and Baldwin</data>
+  <data key="d9">East</data>
+  <data key="d10">High</data>
+</node>
+<edge source="TKT_0013" target="CUST_007">
   <data key="d11">creates</data>
   <data key="d12">Medium</data>
 </edge>
@@ -247,7 +227,19 @@
   <data key="d11">creates</data>
   <data key="d12">Medium</data>
 </edge>
-<edge source="TKT_0013" target="CUST_007">
+<edge source="TKT_0043" target="CUST_020">
+  <data key="d11">creates</data>
+  <data key="d12">Medium</data>
+</edge>
+<edge source="TKT_0001" target="CUST_004">
+  <data key="d11">creates</data>
+  <data key="d12">Critical</data>
+</edge>
+<edge source="TKT_0042" target="CUST_009">
+  <data key="d11">creates</data>
+  <data key="d12">Medium</data>
+</edge>
+<edge source="TKT_0030" target="CUST_005">
   <data key="d11">creates</data>
   <data key="d12">Medium</data>
 </edge>
@@ -255,15 +247,27 @@
   <data key="d11">creates</data>
   <data key="d12">Medium</data>
 </edge>
-<edge source="CUST_007" target="TKT_0010">
+<edge source="TKT_0021" target="CUST_013">
   <data key="d11">creates</data>
-  <data key="d12">High</data>
+  <data key="d12">Low</data>
 </edge>
-<edge source="CUST_007" target="TKT_0018">
+<edge source="TKT_0037" target="CUST_009">
   <data key="d11">creates</data>
   <data key="d12">Medium</data>
 </edge>
-<edge source="CUST_005" target="TKT_0030">
+<edge source="TKT_0045" target="CUST_016">
+  <data key="d11">creates</data>
+  <data key="d12">Medium</data>
+</edge>
+<edge source="TKT_0040" target="CUST_016">
+  <data key="d11">creates</data>
+  <data key="d12">Medium</data>
+</edge>
+<edge source="TKT_0034" target="CUST_016">
+  <data key="d11">creates</data>
+  <data key="d12">Low</data>
+</edge>
+<edge source="TKT_0018" target="CUST_007">
   <data key="d11">creates</data>
   <data key="d12">Medium</data>
 </edge>
@@ -271,16 +275,12 @@
   <data key="d11">creates</data>
   <data key="d12">Low</data>
 </edge>
-<edge source="CUST_013" target="TKT_0021">
+<edge source="TKT_0023" target="CUST_007">
   <data key="d11">creates</data>
   <data key="d12">Low</data>
 </edge>
-<edge source="CUST_020" target="TKT_0043">
+<edge source="CUST_007" target="TKT_0010">
   <data key="d11">creates</data>
-  <data key="d12">Medium</data>
-</edge>
-<edge source="TKT_0001" target="CUST_004">
-  <data key="d11">creates</data>
-  <data key="d12">Critical</data>
+  <data key="d12">High</data>
 </edge>
 </graph></graphml>
