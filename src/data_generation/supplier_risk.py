@@ -210,7 +210,23 @@ products_df = pd.DataFrame(products_data)
 products_df.to_csv(OUTPUT_DIR / 'products.csv', index=False)
 print(f'[OK] Generated products.csv: {len(products_df)} records')
 
-# ===== 8. RISK EVENTS (100 disruption/quality/financial incidents) =====
+# ===== 8. PRODUCT-SUPPLIER DEPENDENCIES (deterministic product coverage) =====
+rng = np.random.default_rng(42)
+product_supplier_dependencies = []
+for _, row in products_df.iterrows():
+    n_suppliers = int(min(row['supplier_dependencies'], len(suppliers_df)))
+    assigned_suppliers = rng.choice(suppliers_df['supplier_id'].values, size=n_suppliers, replace=False)
+    for supp_id in assigned_suppliers:
+        product_supplier_dependencies.append({
+            'product_id': row['product_id'],
+            'supplier_id': supp_id
+        })
+
+product_supplier_deps_df = pd.DataFrame(product_supplier_dependencies)
+product_supplier_deps_df.to_csv(OUTPUT_DIR / 'product_supplier_dependencies.csv', index=False)
+print(f'[OK] Generated product_supplier_dependencies.csv: {len(product_supplier_deps_df)} records')
+
+# ===== 9. RISK EVENTS (100 disruption/quality/financial incidents) =====
 risk_events_data = []
 event_types = ['disruption', 'quality', 'financial', 'legal', 'compliance']
 impact_severities = ['critical', 'high', 'medium']
@@ -241,8 +257,8 @@ print(f'[OK] Generated risk_events.csv: {len(events_df)} records')
 # ===== 9. SUMMARY =====
 print(f'\n[SUMMARY] Supplier Risk Dataset Generated')
 print(f'  Location: {OUTPUT_DIR}')
-print(f'  Files: 8 CSVs')
-print(f'  Total records: {len(suppliers_df) + len(bu_df) + len(cat_df) + len(contracts_df) + len(invoices_df) + len(locations_df) + len(products_df) + len(events_df)}')
+print(f'  Files: 9 CSVs')
+print(f'  Total records: {len(suppliers_df) + len(bu_df) + len(cat_df) + len(contracts_df) + len(invoices_df) + len(locations_df) + len(products_df) + len(product_supplier_deps_df) + len(events_df)}')
 print(f'  Injected risks:')
 print(f'    • Spend fragmentation (multiple BUs buying same category from different suppliers)')
 print(f'    • Single-point-of-failure (SUPP_0147 serves multiple critical products)')
